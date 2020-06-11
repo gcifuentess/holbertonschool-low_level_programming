@@ -11,11 +11,11 @@ int main(void)
 	int i;
 	char l[50];
 
-	for (i = 1; i <= 50; i++)
+	for (i = 1; i < 53; i++)
 	{
-		l[i] = i + 96;
-		if (l[i] <= 122)
+		if (i + 96 <= 122)
 		{
+			l[i] = i + 96;
 			putchar(l[i]);
 		}
 		else
