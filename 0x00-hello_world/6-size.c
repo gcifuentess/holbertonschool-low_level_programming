@@ -14,7 +14,7 @@ int main(void)
 	float Tfloat;
 
 	printf("Size of a char: %lu byte(s)\n", (unsigned long)sizeof(Tchar));
-	printf("Size of a int: %lu byte(s)\n", (unsigned long)sizeof(Tint));
+	printf("Size of an int: %lu byte(s)\n", (unsigned long)sizeof(Tint));
 	printf("Size of a long int: %lu byte(s)\n"
 	       , (unsigned long)sizeof(Tlint));
 	printf("Size of a long long int: %lu byte(s)\n"
