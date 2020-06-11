@@ -20,4 +20,6 @@ int main(void)
 	printf("Size of a long long int: %lu byte(s)\n"
 	       , (unsigned long)sizeof(Tllint));
 	printf("Size of a float: %lu byte(s)\n", (unsigned long)sizeof(Tfloat));
+
+	return(0);
 }
