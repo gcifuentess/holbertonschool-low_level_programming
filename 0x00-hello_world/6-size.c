@@ -21,5 +21,5 @@ int main(void)
 	       , (unsigned long)sizeof(Tllint));
 	printf("Size of a float: %lu byte(s)\n", (unsigned long)sizeof(Tfloat));
 
-	return(0);
+	return (0);
 }
