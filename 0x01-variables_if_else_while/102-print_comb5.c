@@ -8,44 +8,32 @@
 
 int main(void)
 {
-	int w = 0;
-	int k = 0;
-	int i = 0;
-	int j = 1;
+	int n = 0;
+	int n2 = 0;
 
-	for (w = 0; w < 10; w++)
+	while (n <= 98)
 	{
-		for (; k < 9;)
+		n2 = n + 1;
+		while (n2 <= 99)
 		{
-			for (; i < 10;)
+			putchar('0' + n / 10);
+			putchar('0' + n % 10);
+			putchar(' ');
+			putchar('0' + n2 / 10);
+			putchar('0' + n2 % 10);
+
+			if (n == 98 && n2 == 99)
 			{
-				for (; j < 10;)
-				{
-					if (w == i && k == j)
-						j++;
-
-					putchar('0' + w);
-					putchar('0' + k);
-					putchar(' ');
-					putchar('0' + i);
-					putchar('0' + j);
-
-					if (j != 9 || i != 9 || k != 8
-					    || w != 9)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					j++;
-				}
-				i++;
-				j = 0;
+				putchar('\n');
 			}
-			k++;
-			i = 0;
+			else
+			{
+				putchar(',');
+				putchar(' ');
+			}
+			n2++;
 		}
-		k = 0;
+		n++;
 	}
-	putchar('\n');
 	return (0);
 }
