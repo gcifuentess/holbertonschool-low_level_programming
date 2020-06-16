@@ -22,7 +22,8 @@ void times_table(void)
 						toprint = toprint / 10;
 					else
 						toprint = -16;
-					_putchar('0' + toprint);
+					if (j > 0)
+						_putchar('0' + toprint);
 				}
 				else
 				{
