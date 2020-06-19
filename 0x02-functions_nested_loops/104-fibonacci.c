@@ -7,17 +7,17 @@
 int main(void)
 {
 	int i;
-	unsigned long int fibo1 = 1, fibo2 = 2, fibo3;
+	float fibo1 = 1, fibo2 = 2, fibo3;
 
-	printf("%lu, ", fibo1);
-	printf("%lu, ", fibo2);
+	printf("%.0f, ", fibo1);
+	printf("%.0f, ", fibo2);
 
 	for (i = 1; i < 97; i++)
 	{
 		fibo3 = fibo2;
 		fibo2 = fibo1 + fibo2;
 		fibo1 = fibo3;
-		printf("%lu", fibo2);
+		printf("%.0f", fibo2);
 		if (i < 96)
 			printf(", ");
 	}
