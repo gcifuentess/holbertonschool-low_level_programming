@@ -12,13 +12,13 @@ int main(void)
 	printf("%lu, ", fibo1);
 	printf("%lu, ", fibo2);
 
-	for (i = 0; i < 49; i++)
+	for (i = 0; i < 48; i++)
 	{
 		fibo3 = fibo2;
 		fibo2 = fibo1 + fibo2;
 		fibo1 = fibo3;
 		printf("%lu", fibo2);
-		if (i < 47)
+		if (i < 46)
 			printf(", ");
 	}
 	printf("\n");
