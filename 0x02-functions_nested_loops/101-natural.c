@@ -13,11 +13,11 @@ int main(void)
 {
 	int i, natural = 0;
 
-	for (i = 1; i < 1200; i++)
+	for (i = 1; i < 1024; i++)
 	{
 		if ( i % 3 == 0 || i % 5 == 0)
 			natural = natural + i;
 	}
-	printf("%i\n", natural);
+	printf("%d\n", natural);
 	return (0);
 }
