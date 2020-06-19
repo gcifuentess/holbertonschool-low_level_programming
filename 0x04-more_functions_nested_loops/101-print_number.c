@@ -6,7 +6,8 @@
  */
 void print_number(int n)
 {
-	int i, j, module;
+	unsigned int i, module;
+	int j;
 
 	j = 0;
 	module = 10;
