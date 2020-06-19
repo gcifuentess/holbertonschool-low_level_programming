@@ -6,17 +6,17 @@
  */
 void print_number(int n)
 {
-	unsigned int i, module;
+	unsigned int i, module, nprint = n;
 	int j;
 
 	j = 0;
 	module = 10;
 	if (n < 0)
 	{
-		n = n * (-1);
+		nprint = nprint * (-1);
 		_putchar('-');
 	}
-	for (i = n; i >= 10; i = i / 10)
+	for (i = nprint; i >= 10; i = i / 10)
 	{
 		module *= 10;
 		j++;
@@ -24,7 +24,7 @@ void print_number(int n)
 
 	for (j = j; j >= 0; j--)
 	{
-		_putchar((n % (module) / ((module) / 10)) + '0');
+		_putchar((nprint % (module) / ((module) / 10)) + '0');
 		module /= 10;
 	}
 }
