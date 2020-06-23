@@ -18,4 +18,5 @@ void rev_string(char *s)
 	count--;
 	for (i = count; i >= 0; i--)
 		s[count - i] = temp[i];
+	s[count + 2] = '\0'; 
 }
