@@ -20,7 +20,7 @@ void puts_half(char *str)
 	count--;
 /*	_putchar(str[count]);*/
 
-	len = count;
+	len = count + 1;
 	if (len % 2 == 0)
 		len = len / 2;
 	else
