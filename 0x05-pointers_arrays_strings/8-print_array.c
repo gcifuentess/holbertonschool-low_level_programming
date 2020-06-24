@@ -21,8 +21,8 @@ void print_array(int *a, int n)
 		count++;
 	count--;
 
-	if (n >= count + 1)
-		n = count + 1;
+	if (n > count)
+		n = count;
 
 	for (i = 0; i < n; i++)
 	{
