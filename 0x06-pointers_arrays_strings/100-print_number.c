@@ -8,7 +8,7 @@
  */
 void print_number(int n)
 {
-	unsigned int i, module, nprint;
+	int nprint;
 
 	if (n < 0)
 	{
@@ -19,10 +19,7 @@ void print_number(int n)
 	{
 		nprint = n;
 	}
-	module = 10;
-	for (i = nprint; i >= 10; i = i / 10)
-		module *= 10;
-	for (i = module; i >= 10; i = i / 10)
-		_putchar((nprint % i) / (i / 10) + '0');
-
+	if (nprint / 10 > 0)
+		print_number(nprint / 10);
+ 	_putchar('0' + nprint % 10);
 }
