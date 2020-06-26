@@ -8,13 +8,16 @@
  */
 void print_number(int n)
 {
-	int i, module, nprint;
+	unsigned int i, module, nprint;
 
-	nprint = n;
 	if (n < 0)
 	{
 		_putchar('-');
 		nprint  = n * (-1);
+	}
+	else
+	{
+		nprint = n;
 	}
 	module = 10;
 	for (i = nprint; i >= 10; i = i / 10)
