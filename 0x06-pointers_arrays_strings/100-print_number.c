@@ -21,5 +21,5 @@ void print_number(int n)
 	}
 	if (nprint / 10 > 0)
 		print_number(nprint / 10);
- 	_putchar('0' + nprint % 10);
+	_putchar('0' + nprint % 10);
 }
