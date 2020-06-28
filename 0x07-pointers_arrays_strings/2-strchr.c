@@ -11,7 +11,7 @@
 char *_strchr(char *s, char c)
 {
 	char *located;
-	int i;
+	unsigned long int i;
 
 	located = NULL;
 	for (i = 0; *(s + i) != '\0'; i++)
