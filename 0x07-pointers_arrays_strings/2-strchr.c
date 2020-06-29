@@ -10,18 +10,16 @@
  */
 char *_strchr(char *s, char c)
 {
-	char *located;
-	unsigned long int i;
+	int i;
 
-	located = 0;
-	for (i = 0; *(s + i) != '\0'; i++)
+	for (i = 0; s[i] != c && s[i] != '\0'; i++)
 	{
-		if (*(s + i) == c)
-		{
-			located = $s[i];
-			break;
-		}
 	}
-
-	return (located);
+	if (s[i] == c)
+	{
+		s = &s[i];
+		return (s);
+	}
+	else
+		return (0);
 }
