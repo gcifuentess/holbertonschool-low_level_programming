@@ -1,4 +1,4 @@
-#include "holberton.h"
+a#include "holberton.h"
 #include <stdio.h>
 
 /**
@@ -13,7 +13,7 @@ char *_strchr(char *s, char c)
 	char *located;
 	unsigned long int i;
 
-	located = NULL;
+	located = 0;
 	for (i = 0; *(s + i) != '\0'; i++)
 	{
 		if (*(s + i) == c)
