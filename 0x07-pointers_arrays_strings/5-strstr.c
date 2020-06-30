@@ -30,8 +30,7 @@ char *_strstr(char *haystack, char *needle)
 			}
 		}
 		if (count == 1)
-			located = &haystack[j];
-		printf("located string: %s\n", located);
+			located = &haystack[j - 1];
 	}
 	if (i >= count)
 		return (located);
