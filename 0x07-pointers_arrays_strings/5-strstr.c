@@ -18,6 +18,9 @@ char *_strstr(char *haystack, char *needle)
 	int i, j = 0, count = 0;
 	char *located = 0;
 
+	if (*needle == 0)/*as strstr() works*/
+		return (haystack);
+
 	for (i = 0; needle[i] != '\0'; i++)
 	{
 		for (; haystack[j] != '\0'; j++)
