@@ -2,6 +2,7 @@
 
 /**
  * _puts_recursion - prints a string, followed by a new line (by recursion)
+ * @s: Pointer of the string to print
  *
  * Return:Void
  */
