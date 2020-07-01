@@ -28,6 +28,17 @@ char *_strstr(char *haystack, char *needle)
 				j++;
 				break;
 			}
+			/**
+			 * Next elseif to ensure the whole
+			 * string is found continuosly
+			 */
+			else if (count >= 1 && needle[i - 1] == haystack[j - 1])
+			{
+				count = 0;
+				i = -1;
+				located = 0;
+				break;
+			}
 		}
 		if (count == 1)
 			located = &haystack[j - 1];
