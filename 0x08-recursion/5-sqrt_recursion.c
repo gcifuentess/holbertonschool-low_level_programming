@@ -6,7 +6,7 @@ int _sqrt_recursion_val(int n, int sqrt_v);
  * @n: the int to compute
  *
  * Return: If n does not have a natural square root,
- the function should return -1
+ * the function should return -1
  */
 int _sqrt_recursion(int n)
 {
@@ -18,7 +18,7 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * int _sqrt_recursion_val - validates if the square of @sqrt_v is equal to @n
+ * _sqrt_recursion_val - validates if the square of @sqrt_v is equal to @n
  * @n: the int objetive - comes from _sqrt_recursion()
  * @sqrt_v: the int whose square is going to be evaluated
  *
