@@ -27,6 +27,10 @@ int main(int argc, char **argv)
 		{
 			sum += atoi(argv[i]);
 		}
+		else if (**(argv + i) == '0')
+		{
+			sum += atoi(argv[i]);
+		}
 		else
 		{
 			printf("Error\n");
