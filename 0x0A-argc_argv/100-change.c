@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 				return (0);
 			}
 		}
-		remainder = atoi(argv[1])
+		remainder = atoi(argv[1]);
 		for (i = 0; remainder; i++)
 		{
 			if (remainder / CoinValues[i] > 0)
@@ -60,6 +60,6 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		return (1);
 	}
-	printf("%d\n", sum);
+	printf("%lu\n", sum);
 	return (0);
 }
