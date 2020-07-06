@@ -57,8 +57,8 @@ int main(int argc, char **argv)
 		sum += atoi(argv[1]);
 	else
 	{
-		printf("Error\n");
-		return (1);
+		printf("0\n");
+		return (0);
 	}
 	printf("%lu\n", sum);
 	return (0);
