@@ -24,7 +24,7 @@
  */
 int main(int argc, char **argv)
 {
-	int j, i, sum = 0, remainder = atoi(argv[1]);
+	unsigned long int j, i, sum = 0, remainder = 0;
 	char tmp[6];
 	int CoinValues[5] = {25, 10, 5, 2, 1};
 
@@ -45,6 +45,7 @@ int main(int argc, char **argv)
 				return (0);
 			}
 		}
+		remainder = atoi(argv[1])
 		for (i = 0; remainder; i++)
 		{
 			if (remainder / CoinValues[i] > 0)
