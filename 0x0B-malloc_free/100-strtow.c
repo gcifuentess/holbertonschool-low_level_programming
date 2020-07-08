@@ -8,9 +8,9 @@
  */
 char **strtow(char *str)
 {
-	char **dprt;
+	char **dptr;
 
-	if (str == NULL || str == "")
+	if (str == NULL || str[1] == '\0' )
 		return (NULL);
 
 	dptr = malloc(1);
