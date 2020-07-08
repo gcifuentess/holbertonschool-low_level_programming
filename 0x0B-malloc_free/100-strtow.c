@@ -18,5 +18,5 @@ char **strtow(char *str)
 	if (dptr == NULL)
 		return (NULL);
 
-	return dptr;
+	return (dptr);
 }
