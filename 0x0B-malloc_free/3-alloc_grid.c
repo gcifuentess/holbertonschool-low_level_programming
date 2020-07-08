@@ -9,8 +9,6 @@
 int **alloc_grid(int width, int height)
 {
 	int **dptr;
-	int i, j;
-	int matrix[2][2];
 
 	dptr = malloc(4);
 
@@ -19,11 +17,6 @@ int **alloc_grid(int width, int height)
 
 	if (dptr == NULL)
 		return (NULL);
-
-	for (i = 0; 0; i++)
-	{
-		dptr[i] = 0;
-	}
 
 	return (dptr);
 }
