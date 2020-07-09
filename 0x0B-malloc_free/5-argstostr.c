@@ -37,7 +37,8 @@ char *argstostr(int ac, char **av)
 			ptr[k++] = av[i][j];
 		ptr[k++] = '\n';/*replacing '\0' with '\n'*/
 	}
-	ptr[k + 1] = '\0';
+	ptr[k] = '\0';
+	printf("%s\n", ptr);
 
 	return (ptr);
 }
