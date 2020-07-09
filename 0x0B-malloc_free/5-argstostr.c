@@ -26,7 +26,7 @@ char *argstostr(int ac, char **av)
 		flen += 1; /*The space for '\0' char */
 	}
 
-	ptr = malloc(sizeof(char) * flen);
+	ptr = malloc(sizeof(char) * flen + 1);
 
 	if (ptr == NULL)
 		return (NULL);
@@ -37,6 +37,7 @@ char *argstostr(int ac, char **av)
 			ptr[k++] = av[i][j];
 		ptr[k++] = '\n';/*replacing '\0' with '\n'*/
 	}
+	ptr[k + 1] = '\0';
 
 	return (ptr);
 }
