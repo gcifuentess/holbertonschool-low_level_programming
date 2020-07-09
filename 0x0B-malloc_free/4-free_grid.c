@@ -1,18 +1,13 @@
 #include "holberton.h"
 
 /**
- * free_grid - desc
- * @grid: desc
- * @heigth: desc
+ * free_grid - Frees a 2 dimensional grid created by alloc_grid function.
+ * @grid: The previous grid created.
+ * @heigth: The hight of the grid (unused).
  *
- * Return: desc
+ * Return: void
  */
-void free_grid(int **grid, int height)
+void free_grid(int **grid, int height __attribute__((unused)))
 {
-	int a;
-
-	a = height;
-
-	free(grid);
-	printf("%d\n", a);
+	free((int *)grid);
 }
