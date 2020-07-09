@@ -3,7 +3,7 @@
 /**
  * free_grid - Frees a 2 dimensional grid created by alloc_grid function.
  * @grid: The previous grid created.
- * @heigth: The hight of the grid (unused).
+ * @height: The hight of the grid (unused).
  *
  * Return: void
  */
