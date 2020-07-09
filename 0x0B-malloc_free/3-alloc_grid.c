@@ -25,22 +25,12 @@ int **alloc_grid(int width, int height)
 
 	if (dptr == NULL)
 	{
-		free(dptr);
+		free((int *)dptr);
 		return (NULL);
 	}
 
 	for (i = 0; i < height; i++)
-	{
 		dptr[i] = (ptr + width * i);
-		if (dptr[i] == NULL)
-		{
-			printf("Im here\n");
-			for (j = 0; j < i; j++)
-				free(dptr[j]);
-			free(dptr);
-			return (NULL);
-		}
-	}
 
 	for (i = 0; i < height; i++)
 	{
