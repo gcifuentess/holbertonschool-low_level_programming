@@ -19,41 +19,41 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	unsigned int len1 = 0, len2 = 0, concat, temp;
+	unsigned int len1 = 1, len2 = 1, concat, temp;
 
 	if (!s1)
-		len1 = 1;
+		len1 = 0;
 	if (!s2)
-		len2 = 1;
-
-	if (len1 == 0)
+		len2 = 0;
+	if (len1 == 1)
 	{
-		for (; s1[len1] != '\0'; len1++)
-		{
-		}
+		for (len1 = 0; s1[len1] != '\0'; len1++)
+		{}
 	}
-	if (len2 == 0)
+	if (len2 == 1)
 	{
-		for (; s2[len2] != '\0'; len2++)
-		{
-		}
-		len2++;
+		for (len2 = 0; s2[len2] != '\0'; len2++)
+		{}
 	}
 	if (len2 > n)
-		len2 = n + 1;
+		len2 = n;
 
-	ptr = malloc(sizeof(char) * (len1 + len2));
+	ptr = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (!ptr)
 		return (NULL);
+	if ((len1 == 0 && n == 0) || (len1 == 0 && len2 == 0))
+	{
+		ptr[0] = '\0';
+		return (ptr);
+	}
 	for (concat = 0, temp = 0; concat < (len1 + len2); concat++)
 	{
 		if (concat < len1)
 			ptr[concat] = s1[concat];
-		else
+		else if (len2 > 0)
 			ptr[concat] = s2[temp++];
 	}
-	if (len2 > n)
-		ptr[len1 + len2 - 1] = '\0';
+	ptr[len1 + len2] = '\0';
 
 	return (ptr);
 }
