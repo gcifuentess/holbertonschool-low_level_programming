@@ -54,5 +54,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			ptr[concat] = s2[temp++];
 	}
 
+	printf("largo final: %u\n", len1 + len2);
 	return (ptr);
 }
