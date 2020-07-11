@@ -1,12 +1,20 @@
 #include "holberton.h"
 
 /**
- * string_nconcat - desc
- * @s1: desc
- * @s2: desc
- * @n: des
+ * string_nconcat - concatenates two strings
+ * @s1: string 1
+ * @s2: string 2
+ * @n: chars to concat
  *
- * Return: des
+ * Description: -The returned pointer shall point to a newly allocated
+ *               space in memory, which contains s1, followed by the
+ *               first n bytes of s2, and null terminated.
+ *              -If the function fails, it should return NULL.
+ *              -If n is greater or equal to the length of s2
+ *               then use the entire string s2.
+ *              -If NULL is passed, treat it as an empty string.
+ *
+ * Return: Pointer or NULL
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
@@ -45,7 +53,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		else
 			ptr[concat] = s2[temp++];
 	}
-	ptr[concat] = '\0';
 
 	return (ptr);
 }
