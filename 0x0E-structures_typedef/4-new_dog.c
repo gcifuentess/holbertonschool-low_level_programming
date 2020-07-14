@@ -6,6 +6,9 @@
  * @age: age of the new dog.
  * @owner: name of the owner.
  *
+ * Description: -You have to store a copy of name and owner
+ *              -Return NULL if the function fails
+ *
  * Return: Pointer.
  */
 dog_t *new_dog(char *name, float age, char *owner)
@@ -13,10 +16,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	dog_t *ptr;
 	char *name_copy, *owner_copy;
-
-	ptr = malloc(sizeof(dog_t));
-	if (!ptr)
-		return (NULL);
 
 	name_copy = _strdup(name);
 	if (!name_copy)
@@ -27,6 +26,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(name_copy);
 		return (NULL);
 	}
+
+	ptr = malloc(sizeof(dog_t));
+	if (!ptr)
+		return (NULL);
 
 	ptr->name = name_copy;
 	ptr->age = age;
