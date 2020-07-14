@@ -27,9 +27,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	ptr->name = name;
+	ptr->name = name_copy;
 	ptr->age = age;
-	ptr->owner = owner;
+	ptr->owner = owner_copy;
 
 	return (ptr);
 }
