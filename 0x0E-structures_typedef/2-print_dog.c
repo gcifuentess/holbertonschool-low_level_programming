@@ -24,5 +24,8 @@ void print_dog(struct dog *d)
 		else if (d->name && d->age)
 			printf("Name: %s\nAge: %f\nOwner: %s\n",
 			       d->name, d->age, owner_null);
+		else
+			printf("Name: %s\nAge: %f\nOwner: %s\n",
+			       name_null, d->age, owner_null);
 	}
 }
