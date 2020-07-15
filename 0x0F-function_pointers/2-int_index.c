@@ -4,6 +4,7 @@
  * int_index - searches for an integer in an array.
  * @array: given array.
  * @size: size of the array.
+ * @cmp: the pointer to the function that compares.
  *
  * Return: -The index where the integer was found.
  *         -If no match return 0.
