@@ -2,8 +2,8 @@
 
 /**
  * main - this program is a calculator (+, -, *, / or %) for a and b.
- * @a: first int number.
- * @b: second int number.
+ * @argc: counter of receibed arguments.
+ * @argv: array with the receibed arguments..
  *
  * Description: -Prints the result of the operation, followed
  *               by a new line.
@@ -20,7 +20,7 @@
  */
 int main(int argc, char **argv)
 {
-	int (* oper)(int a, int b);
+	int (*oper)(int a, int b);
 
 	if (argc > 3)
 	{
@@ -28,9 +28,9 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	if ( argv[2] != '+' && argv[2] != '-' &&
-	     argv[2] != '*' && argv[2] != '/' &&
-	     argv[2] != '%')
+	if (argv[2] != '+' && argv[2] != '-' &&
+	    argv[2] != '*' && argv[2] != '/' &&
+	    argv[2] != '%')
 	{
 		printf("Error\n");
 		exit(99);
