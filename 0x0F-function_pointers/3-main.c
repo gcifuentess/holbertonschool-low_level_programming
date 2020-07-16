@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	int (*oper)(int a, int b);
 	int a, b;
 
-	if (argc > 4)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
