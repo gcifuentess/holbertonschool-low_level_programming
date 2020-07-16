@@ -19,7 +19,7 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i;
 
-	i= 0;
+	i = 0;
 	while (i < 6)
 	{
 		if (s[0] == ops[i].op  && s[1] == '\0' && s != NULL)

@@ -3,7 +3,7 @@
 /**
  * main - this program is a calculator (+, -, *, / or %) for a and b.
  * @argc: counter of receibed arguments.
- * @argv: array with the receibed arguments..
+ * @argv: array with the receibed arguments.
  *
  * Description: -Prints the result of the operation, followed
  *               by a new line.
@@ -42,5 +42,6 @@ int main(int argc, char **argv)
 		exit(100);
 	}
 
-	return (oper)
+	oper = get_op_func(argv[2]);
+	return (oper(a, b));
 }
