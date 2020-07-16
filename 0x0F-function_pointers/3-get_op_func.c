@@ -20,12 +20,13 @@ int (*get_op_func(char *s))(int, int)
 	int i;
 
 	i = 0;
-	while (i < 6)
+	while (i < 5)
 	{
-		if (s[0] == ops[i].op  && s[1] == '\0' && s != NULL)
+		if (s[0] == ops[i].op[0]  && s[1] == '\0' &&
+		    s != NULL)
 			return (ops[i].f);
 		i++;
 	}
 
-	return (NULL)
+	return (NULL);
 }

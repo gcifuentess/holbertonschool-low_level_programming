@@ -21,27 +21,31 @@
 int main(int argc, char **argv)
 {
 	int (*oper)(int a, int b);
+	int a, b;
 
-	if (argc > 3)
+	if (argc > 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
 
-	if (argv[2] != '+' && argv[2] != '-' &&
-	    argv[2] != '*' && argv[2] != '/' &&
-	    argv[2] != '%')
+	oper = get_op_func(argv[2]);
+	if (oper == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if ((argv[2] == '/' || argv[2] == '%') && atoi(arg[3]) == 0)
+	if ((argv[2][0] == '/' || argv[2][0] == '%') &&
+	    atoi(argv[3]) == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
 
-	oper = get_op_func(argv[2]);
-	return (oper(a, b));
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	printf("%d\n", oper(a, b));
+	return (0);
 }
