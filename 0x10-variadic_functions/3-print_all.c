@@ -98,7 +98,10 @@ void f_print_s(char *separator, va_list valist)
 
 	s = va_arg(valist, char *);
 	if (s)
+	{
 		printf("%s%s", separator, s);
-	else
-		printf("%s%s", separator, "(nil)");
+		return;
+	}
+
+	printf("%s%s", separator, "(nil)");
 }
