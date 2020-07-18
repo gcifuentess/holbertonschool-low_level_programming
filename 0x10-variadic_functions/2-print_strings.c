@@ -12,6 +12,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list valist;
 	unsigned int i;
 
+	if (!n)
+	{
+		printf("\n");
+		return;
+
+	}
+
 	va_start(valist, n);
 
 	for (i = 0; i < n; i++)
@@ -23,4 +30,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		else
 			printf("%s\n", va_arg(valist, char *));
 	}
+
+	va_end(valist);
 }
