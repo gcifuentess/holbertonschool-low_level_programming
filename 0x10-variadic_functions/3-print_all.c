@@ -14,7 +14,6 @@ void print_all(const char * const format, ...)
 	formats_t act_format;
 	char *act_id_format, *separator = "";
 	unsigned int i = 0, j = 0;
-	char flag = '0';
 
 	formats_t my_format[] = {
 			{"c", f_print_c},
