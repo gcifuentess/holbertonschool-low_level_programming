@@ -25,7 +25,7 @@ void print_all(const char * const format, ...)
 		};
 	va_start(valist, format);
 
-	while (format[i])
+	while (format && format[i])
 	{
 		act_format = my_format[0];
 		act_id_format = act_format.idformat;
