@@ -24,15 +24,14 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		act_valist = va_arg(valist, char *);
-		if (separator)
-			printf("%s%s", act_valist, separator);
-		else if (!act_valist)
-		{
-			printf("(nil)");
-		}
-		else
+		if (act_valist)
 			printf("%s", act_valist);
+		else
+			printf("(nil)");
+		if (separator && i < n - 1)
+			printf("%s", separator);
+		else if (i == n - 1)
+			printf("\n");
 	}
-	printf("\n");
 	va_end(valist);
 }
