@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 {
 	va_list valist;
 	formats_t act_format;
-	char *act_id_format, *separator = "", *separator2 =", ";
+	char *act_id_format, *separator = "";
 	unsigned int i = 0, j = 0;
 	char flag = '0';
 
@@ -35,7 +35,7 @@ void print_all(const char * const format, ...)
 			if (format[i] == act_id_format[0])
 			{
 				act_format.f_print(separator, valist);
-				separator = separator2;
+				separator = ", ";
 				break;
 			}
 			act_format = my_format[j++];
