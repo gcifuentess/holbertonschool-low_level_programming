@@ -13,7 +13,7 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *ptr;
+	list_t *ptr, *temp;
 	char *str_cpy;
 
 	str_cpy = strdup(str);
@@ -29,9 +29,20 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	ptr->str = str_cpy;
 	ptr->len = _strlen(str_cpy);
-	ptr->next = NULL;
+	if (*head)
+	{
+		for (temp = *head; temp->next; temp = temp->next)
+		{
+		}
+		temp->next = ptr;
+	}
+	else
+	{
+		printf("enter else\n");
+		ptr->next = NULL;
+		*head = ptr;
+	}
 
-	*head = ptr;
 
 	return (ptr);
 }
