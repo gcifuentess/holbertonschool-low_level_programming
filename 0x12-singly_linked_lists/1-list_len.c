@@ -12,7 +12,7 @@ size_t list_len(const list_t *h)
 	list_t *ptr;
 
 	if (h)
-		count = 1;
+		count = 0;
 	else
 		return (count = 0);
 
