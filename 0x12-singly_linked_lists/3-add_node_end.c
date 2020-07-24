@@ -38,7 +38,6 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	else
 	{
-		printf("enter else\n");
 		ptr->next = NULL;
 		*head = ptr;
 	}
