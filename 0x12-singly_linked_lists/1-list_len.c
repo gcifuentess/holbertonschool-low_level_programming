@@ -12,9 +12,12 @@ size_t list_len(const list_t *h)
 	list_t *ptr;
 
 	if (h)
-		count = 0;
+		count = 1;
 	else
 		return (count = 0);
+
+	if (!(h->next))
+		return (count);
 
 	for (ptr = h->next; ptr->next; ptr = ptr->next)
 		count++;
