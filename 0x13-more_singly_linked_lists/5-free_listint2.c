@@ -1,7 +1,8 @@
 #include "lists.h"
 
 /**
- * free_listint2 - frees a linked list
+ * free_listint2 - frees a linked list.
+ * @head: head ptr of the linked list.
  *
  * Important: The function sets the head to NULL.
  *
@@ -22,11 +23,10 @@ void free_listint2(listint_t **head)
 	for (; count; count--)
 	{
 		ptr = *head;
-		for (i = 0; i < count; i++)
+		for (i = 1; i < count; i++)
 			ptr = ptr->next;
 		free(ptr);
 	}
-	free(*head);
 
 	*head = NULL;
 }
