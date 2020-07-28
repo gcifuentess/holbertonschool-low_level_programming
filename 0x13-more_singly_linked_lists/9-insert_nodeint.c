@@ -33,11 +33,20 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	ptr = malloc(sizeof(listint_t));
 	if (!ptr)
 		return (NULL);
+
 	ptr->n = n;
-	/*next will find the previous node before idx*/
-	ptrTemp = get_nodeint_at_index(*head, (idx - 1));
-	ptr->next = ptrTemp->next;
-	ptrTemp->next = ptr;
+	if (head)
+	{
+		/*next will find the previous node before idx*/
+		ptrTemp = get_nodeint_at_index(*head, (idx - 1));
+		ptr->next = ptrTemp->next;
+		ptrTemp->next = ptr;
+	}
+	else
+	{
+		*head = ptr;
+		(*head)->next = NULL;
+	}
 
 	return (ptr);
 }
