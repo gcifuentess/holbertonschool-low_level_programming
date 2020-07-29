@@ -2,7 +2,7 @@
 
 /**
  * reverse_listint - reverses a linked list.
- * @head: bouble pointer to the head of the list.
+ * @head: double pointer to the head of the list.
  *
  * Important: -Not allowed to use more than 1 loop.
  *            -You are not allowed to use malloc, free or arrays.
@@ -14,6 +14,11 @@
 listint_t *reverse_listint(listint_t **head)
 {
 	listint_t *ptr, *lastNode;
+
+	if (!head)
+		return (NULL);
+	if (!(*head))
+		return (NULL);
 
 	lastNode = NULL;
 	ptr = *head;
