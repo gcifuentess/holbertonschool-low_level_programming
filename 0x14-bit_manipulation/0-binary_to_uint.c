@@ -24,17 +24,12 @@ unsigned int binary_to_uint(const char *b)
 			actual = 1;
 		else
 			return (0);
-		result = result + actual*_pow_recursion(2, len_b);
+		result = result + actual * _pow_recursion(2, len_b);
 		len_b--;
 	}
 
 	return (result);
 }
-/**
- * ----------------------------------
- * ________Functions Definition------
- * ----------------------------------
- */
 
 /**
  * _strlen - returns the length of a string
