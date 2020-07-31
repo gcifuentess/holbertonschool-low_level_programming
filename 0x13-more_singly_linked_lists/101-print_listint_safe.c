@@ -24,7 +24,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (actual == loopStart && flag)
 		{
 			printf("-> [%p] %d\n", (void *)actual, actual->n);
-			exit(98);
+			return (count);
 		}
 
 		printf("[%p] %d\n", (void *)actual, actual->n);
