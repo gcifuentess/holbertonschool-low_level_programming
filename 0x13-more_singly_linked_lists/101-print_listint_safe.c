@@ -81,5 +81,5 @@ const listint_t *the_tortoise_and_the_hare(const listint_t *head)
 		}
 		broken = broken->next;
 	}
-	return (tortoise->next);
+	return (tortoise);
 }
