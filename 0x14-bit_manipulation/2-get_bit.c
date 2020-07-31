@@ -9,31 +9,8 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int TotalBits, actualBit, counter;
-	char flag;
 
-	if ((n == 0 || n == 1) && index == 0)
-		return (n);
-
-	TotalBits = sizeof(n) * 8;
-
-	flag = 'a';
-	counter = 0;
-	for ( ; TotalBits; TotalBits--)
-	{
-		/**
-		 *use of bitwise to get from the most left of
-		 *the bits to the most rigth one.
-		 */
-		actualBit = (n >> (TotalBits - 1)) & 1;
-
-		/*Following "if" is to evoid counting the left 0's*/
-		if (!flag || actualBit)
-			flag = '\0';
-		if (!flag)
-			counter++;
-	}
-	if (!(index < counter))
+	if (index >= sizeof(n) * 8)
 		return (-1);
 
 	return ((n >> index) & 1);
