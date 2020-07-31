@@ -51,22 +51,18 @@ const listint_t *the_tortoise_and_the_hare(const listint_t *head)
 
 	if (!tortoise || !hare)
 		return (NULL);
-
 	len = 0;/*number of nodes of the loop*/
 	while (tortoise != hare)
 	{
 		tortoise = tortoise->next;
-
 		if (hare)
 			flag = hare->next;
 
 		if (!flag || !hare)
 			return (NULL);
-
 		hare = (hare->next)->next;
 		len++;
 	}
-
 	/*The next section is to locate the real beginning of the loop*/
 	broken = head;
 	actual = tortoise;
@@ -81,5 +77,7 @@ const listint_t *the_tortoise_and_the_hare(const listint_t *head)
 		}
 		broken = broken->next;
 	}
+	if (len == 2)
+		return (tortoise->next);
 	return (tortoise);
 }
