@@ -36,12 +36,5 @@ int get_bit(unsigned long int n, unsigned int index)
 	if (!(index < counter))
 		return (-1);
 
-	index++;
-	for ( ; counter; counter--)
-		if (counter == index)
-		{
-			actualBit = (n >> (index - 1)) & 1;
-			return (actualBit);
-		}
-	return (-1);
+	return ((n >> index) & 1);
 }
