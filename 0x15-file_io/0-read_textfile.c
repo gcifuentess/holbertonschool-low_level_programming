@@ -13,7 +13,8 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, toPrint, printed;
+	ssize_t toPrint, printed;
+	int fd;
 	char *buf;
 
 	if (!filename)
@@ -34,15 +35,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	close(fd);
 
-	printed = write(1, buf, toPrint);
+	printed = write(STDOUT_FILENO, buf, toPrint);
 	if (printed == -1)
 	{
 		free(buf);
 		return (0);
 	}
 
+
+	close(fd);
 	free(buf);
 
 	if (printed != toPrint)
