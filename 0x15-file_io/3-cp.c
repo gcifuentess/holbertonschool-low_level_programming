@@ -6,7 +6,6 @@
 #define NOCLOSE_ERR "Error: Can't close fd %d\n"
 #define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 
-int write_buffer(const char *argv1, const char *argv2);
 
 /**
  * main - copies the content of a file to another file
