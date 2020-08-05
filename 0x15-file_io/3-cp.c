@@ -29,19 +29,19 @@ int main(int argc, char **argv)
 	fd_from = open(argv[1], O_RDONLY);
 
 	if (fd_from == -1)
-		dprintf(STDOUT_FILENO, NOREAD_ERR, argv[1]), exit(98);
+		dprintf(STDERR_FILENO, NOREAD_ERR, argv[1]), exit(98);
 
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, PERMISSIONS);
 
 	if (fd_to == -1)
-		dprintf(STDOUT_FILENO, NOWRITE_ERR, argv[2]), exit(99);
+		dprintf(STDERR_FILENO, NOWRITE_ERR, argv[2]), exit(99);
 
 	while ((check_from = read(fd_from, buffer, buffer_size)) > 0)
 		if (write(fd_to, buffer, check_from) != check_from)
-			dprintf(STDOUT_FILENO, NOWRITE_ERR, argv[2]), exit(99);
+			dprintf(STDERR_FILENO, NOWRITE_ERR, argv[2]), exit(99);
 
 	if (check_from == -1)
-		dprintf(STDOUT_FILENO, NOREAD_ERR, argv[1]), exit(98);
+		dprintf(STDERR_FILENO, NOREAD_ERR, argv[1]), exit(98);
 
 	check_from = close(fd_from);
 	check_to = close(fd_to);
