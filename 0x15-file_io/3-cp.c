@@ -16,7 +16,8 @@
 
 int main(int argc, char **argv)
 {
-	int check_file_to, check_file_from, fd_file_from, fd_file_to;
+	ssize_t check_file_to, check_file_from;
+	int fd_file_from, fd_file_to;
 	char *buffer[1024];
 	size_t buffer_size = 1024;
 
@@ -29,7 +30,8 @@ int main(int argc, char **argv)
 	fd_file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, PERMISSIONS);
 	while ((check_file_from = read(fd_file_from, buffer, buffer_size)) > 0)
 	{
-		if (write(fd_file_to, buffer, buffer_size) != check_file_from)
+		if (write(fd_file_to, buffer, check_file_from)
+		    != check_file_from)
 		{
 			dprintf(STDOUT_FILENO, NOWRITE_ERR, argv[2]);
 			exit(99);
