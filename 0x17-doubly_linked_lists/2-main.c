@@ -10,10 +10,10 @@
  */
 int main(void)
 {
-	dlistint_t *head;
+	dlistint_t *head, *end, *actual;
 
 	head = NULL;
-	add_dnodeint(&head, 0);
+	end = add_dnodeint(&head, 0);
 	add_dnodeint(&head, 1);
 	add_dnodeint(&head, 2);
 	add_dnodeint(&head, 3);
@@ -22,5 +22,8 @@ int main(void)
 	add_dnodeint(&head, 402);
 	add_dnodeint(&head, 1024);
 	print_dlistint(head);
+	for (actual = end; actual; actual = actual->prev)
+		printf("%d\n", actual->n);
+
 	return (EXIT_SUCCESS);
 }
