@@ -30,7 +30,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		ht->array[index] = malloc(sizeof(hash_node_t));
 		if (!ht->array[index])
+		{
+			free(value_cpy);
+			free(key_cpy);
 			return (0);
+		}
 		(ht->array[index])->value = value_cpy;
 		(ht->array[index])->key = key_cpy;
 		(ht->array[index])->next = NULL;
@@ -39,12 +43,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		new = malloc(sizeof(hash_node_t));
 		if (!new)
+		{
+			free(value_cpy);
+			free(key_cpy);
 			return (0);
+		}
 		new->value = value_cpy;
 		new->key = key_cpy;
 		new->next = ht->array[index];
 		ht->array[index] = new;
 	}
 
-	return (0);
+	return (1);
 }
