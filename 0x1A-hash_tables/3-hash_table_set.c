@@ -52,6 +52,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  * @ht: pointer to the hash table
  * @key_cpy: string copy of the key
  * @value_cpy: string copy of the value
+ * @index: index for the hash table
  *
  * Return: 1 if it succeeded, 0 otherwise.
  */
