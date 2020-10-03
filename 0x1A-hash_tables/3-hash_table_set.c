@@ -69,6 +69,7 @@ int add_node(hash_table_t *ht, char *kc, char *vc, unsigned long int idx)
 	{
 		if (strcmp(kc, head->key) == 0)
 		{
+			free(head->value);
 			head->value = vc;
 			return (1);
 		}
