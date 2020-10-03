@@ -63,14 +63,14 @@ int add_node(hash_table_t *ht, char *kc, char *vc, unsigned long int idx)
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 	{
-		free(value_cpy);
-		free(key_cpy);
+		free(vc);
+		free(kc);
 		return (0);
 	}
-	new->value = value_cpy;
-	new->key = key_cpy;
-	new->next = ht->array[index];
-	ht->array[index] = new;
+	new->value = vc;
+	new->key = kc;
+	new->next = ht->array[idx];
+	ht->array[idx] = new;
 
 	return (1);
 }
