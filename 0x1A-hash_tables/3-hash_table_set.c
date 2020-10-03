@@ -13,6 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	char *value_cpy, *key_cpy;
 	int colission;
+	hash_node_t *head;
 
 	colission = 0;
 	if (!ht || !key || !value || !*key)
@@ -28,18 +29,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(key_cpy);
 		return (0);
 	}
-	if (!ht->array[index])
+	head = ht->array[index];
+	if (!head)
 	{
-		ht->array[index] = malloc(sizeof(hash_node_t));
-		if (!ht->array[index])
+		head = malloc(sizeof(hash_node_t));
+		if (!head)
 		{
 			free(value_cpy);
 			free(key_cpy);
 			return (0);
 		}
-		(ht->array[index])->value = value_cpy;
-		(ht->array[index])->key = key_cpy;
-		(ht->array[index])->next = NULL;
+		head->value = value_cpy;
+		head->key = key_cpy;
+		head->next = NULL;
 		return (1);
 	}
 
@@ -59,7 +61,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 int add_node(hash_table_t *ht, char *kc, char *vc, unsigned long int idx)
 {
 	hash_node_t *new;
+	hash_node_t *head;
 
+	head = ht->array[idx];
+
+	while (head)
+	{
+		if (strcmp(kc, head->key) == 0)
+		{
+			head->value = vc;
+			return (1);
+		}
+		head = head->next;
+
+	}
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 	{
@@ -69,8 +84,8 @@ int add_node(hash_table_t *ht, char *kc, char *vc, unsigned long int idx)
 	}
 	new->value = vc;
 	new->key = kc;
-	new->next = ht->array[idx];
-	ht->array[idx] = new;
+	new->next = head;
+	head = new;
 
 	return (1);
 }
