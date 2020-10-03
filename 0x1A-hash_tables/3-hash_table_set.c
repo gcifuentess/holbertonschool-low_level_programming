@@ -75,6 +75,7 @@ int add_node(hash_table_t *ht, char *kc, char *vc, unsigned long int idx)
 		head = head->next;
 
 	}
+	head = ht->array[idx];
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 	{
