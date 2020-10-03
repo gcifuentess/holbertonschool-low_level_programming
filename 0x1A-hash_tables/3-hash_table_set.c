@@ -50,14 +50,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 /**
  * add_node - adds a node to the hash table
  * @ht: pointer to the hash table
- * @key_cpy: string copy of the key
- * @value_cpy: string copy of the value
- * @index: index for the hash table
+ * @kc: string copy of the key
+ * @vc: string copy of the value
+ * @idx: index for the hash table
  *
  * Return: 1 if it succeeded, 0 otherwise.
  */
-int add_node(hash_table_t *ht, char *key_cpy, char *value_cpy,
-	     unsigned long int index)
+int add_node(hash_table_t *ht, char *kc, char *vc, unsigned long int idx)
 {
 	hash_node_t *new;
 
