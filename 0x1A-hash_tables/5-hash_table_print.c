@@ -13,7 +13,7 @@ void hash_table_print(const hash_table_t *ht)
 	int flag;
 
 	if (!ht)
-		printf("{}\n");
+		return;
 
 	printf("{");
 	flag = 0;
