@@ -39,12 +39,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			free(key_cpy);
 			return (0);
 		}
+		ht->array[index] = head;
 		head->value = value_cpy;
 		head->key = key_cpy;
 		head->next = NULL;
 		return (1);
 	}
-
 	colission = add_node(ht, key_cpy, value_cpy, index);
 	return (colission);
 }
@@ -87,7 +87,7 @@ int add_node(hash_table_t *ht, char *kc, char *vc, unsigned long int idx)
 	new->value = vc;
 	new->key = kc;
 	new->next = head;
-	head = new;
+	ht->array[idx] = new;
 
 	return (1);
 }
