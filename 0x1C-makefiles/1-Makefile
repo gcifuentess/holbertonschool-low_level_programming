@@ -1,5 +1,5 @@
 CC=gcc
-SCR=$(shell ls -r *.c)
+SCR= main.c holberton.c
 
 all: $(SRC)
 	$(CC) $(SCR) -o holberton
