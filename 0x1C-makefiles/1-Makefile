@@ -2,5 +2,5 @@ CC=gcc
 SCR=$(wildcard *.c)
 
 .PHONY: all
-all:
+all: $(SRC)
 	$(CC) $(SCR) -o holberton
