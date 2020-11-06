@@ -1,12 +1,10 @@
 CC=gcc
-SRC= $(shell ls *.c)
+SRC= main.c holberton.c # $(shell ls *.c)
 OBJ= $(SRC:.c=.o)
 NAME=holberton
 
-all: $(NAME)
+all: $(OBJ)
+	$(CC) $^ -o $(NAME)
 
 %.o: %.c %.h
 	$(CC) -c $^
-
-$(NAME): $(OBJ)
-	$(CC) $^ -o $@
