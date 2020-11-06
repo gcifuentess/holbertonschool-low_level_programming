@@ -1,5 +1,5 @@
 CC=gcc
-SCR=$(wildcard *.c)
+SCR=$(shell ls -r *.c)
 
 all: $(SRC)
 	$(CC) $(SCR) -o holberton
