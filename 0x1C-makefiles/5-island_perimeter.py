@@ -11,18 +11,16 @@ def island_perimeter(grid):
     while i < len_row:
         j = 0
         while j < len_col:
-            if i != 0 and i < (len_row - 1):  # checks up and down borders
-                if j != 0 and j < len_col - 1:  # checks left and right borders
-                    cell = grid[i][j]
-                    if cell == 1:
-                        if grid[i - 1][j] == 0:  # checks upside
-                            perimeter += 1
-                        if grid[i + 1][j] == 0:  # checks downside
-                            perimeter += 1
-                        if grid[i][j - 1] == 0:  # checks leftside
-                            perimeter += 1
-                        if grid[i][j + 1] == 0:  # checks rigthside
-                            perimeter += 1
+            cell = grid[i][j]
+            if cell == 1:
+                if i == 0 or grid[i - 1][j] == 0:  # checks upside
+                    perimeter += 1
+                if i == len_row - 1 or grid[i + 1][j] == 0:  # checks downside
+                    perimeter += 1
+                if j == 0 or grid[i][j - 1] == 0:  # checks leftside
+                    perimeter += 1
+                if j == len_col - 1 or grid[i][j + 1] == 0:  # checks rigthside
+                    perimeter += 1
             j += 1
         i += 1
     return perimeter
